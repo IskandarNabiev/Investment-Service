@@ -27,8 +27,7 @@ public class BuyShares {
         //проверка на баланс
         portfolioRepository.save(new PortfolioEntity(clientId, shareId, quantity));
         operationHistoryRepo.save(new OperationHistoryEntity(clientId, shareId, quantity, cost, "buy", Instant.now()));
-        // делаем трансфер через clientId и quantity * cost
+        // делаем трансфер через clientId и quantity *
 
     }
-
 }
