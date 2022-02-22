@@ -16,6 +16,7 @@ import java.util.Objects;
 @Setter
 @ToString
 @RequiredArgsConstructor
+@AllArgsConstructor
 public class OperationHistoryEntity {
     @Id
     @Column(name = "client_id", nullable = false, precision = 131089)

@@ -2,9 +2,7 @@ package com.gpb.javacourse.investmentservice.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;
-
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Objects;
 
 @Table(name = "share")
@@ -13,6 +11,7 @@ import java.util.Objects;
 @Setter
 @ToString
 @RequiredArgsConstructor
+@AllArgsConstructor
 public class ShareEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +28,7 @@ public class ShareEntity {
     private String description;
 
     @Column(name = "price", nullable = false, precision = 131089)
-    private BigDecimal price;
+    private Double price;
 
     @Override
     public boolean equals(Object o) {

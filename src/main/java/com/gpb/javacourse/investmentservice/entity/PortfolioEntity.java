@@ -16,10 +16,11 @@ import java.util.Objects;
 @Setter
 @ToString
 @RequiredArgsConstructor
+@AllArgsConstructor
 public class PortfolioEntity {
     @Id
     @Column(name = "client_id", nullable = false, precision = 131089)
-    private BigDecimal id;
+    private Long id;
 
     @Column(name = "share_id", nullable = false)
     private Integer shareId;
