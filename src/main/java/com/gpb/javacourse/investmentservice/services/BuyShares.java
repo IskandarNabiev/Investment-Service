@@ -21,13 +21,12 @@ public class BuyShares {
 
     public void buyShare(Integer shareId, Long clientId, Integer quantity){
         //запрос к мосбирже и апдейтим таблицу share
-        //ShareEntity shareEntity = shareRepository.getById(shareId);
-        //double cost = shareEntity.getPrice();
-        double cost= 4.21;
+        ShareEntity shareEntity = shareRepository.getById(shareId);
+        double cost = shareEntity.getPrice();
         //проверка на баланс
         portfolioRepository.save(new PortfolioEntity(clientId, shareId, quantity));
         operationHistoryRepo.save(new OperationHistoryEntity(clientId, shareId, quantity, cost, "buy", Instant.now()));
-        // делаем трансфер через clientId и quantity *
+        // обращаемся к сервису трансфера и делаем трансфер передавая clientId и quantity * cost
 
     }
 }
